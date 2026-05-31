@@ -31,12 +31,12 @@ assessmentButton.addEventListener(
       'https://twitter.com/intent/tweet?button_hashtag=' +
       encodeURIComponent('あなたのいいところ') +
       '&ref_src=twsrc%5Etfw';
-
+  
     anchor.setAttribute('href', hrefValue);
     anchor.setAttribute('class', 'twitter-hashtag-button');
     anchor.setAttribute('data-text', result);
     anchor.innerText = 'Tweet #あなたのいいところ';
-
+  
     tweetDivision.appendChild(anchor);
 
 
@@ -48,7 +48,7 @@ assessmentButton.addEventListener(
 
 userNameInput.addEventListener(
   'keydown',
-  (event) => {
+  event => {
     if(event.code === 'Enter') {
       assessmentButton.dispatchEvent(new Event('click'))
     }
@@ -102,7 +102,7 @@ function test() {
   console.log('太郎');
   console.assert(
     assessment('太郎') ===
-      '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+    '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
   );
 
@@ -110,7 +110,7 @@ function test() {
   console.log('次郎');
   console.assert(
     assessment('次郎') ===
-      '次郎のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる次郎が皆から評価されています。',
+    '次郎のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる次郎が皆から評価されています。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
   );
 
@@ -118,10 +118,10 @@ function test() {
   console.log('花子');
   console.assert(
     assessment('花子') ===
-      '花子のいいところはまなざしです。花子に見つめられた人は、気になって仕方がないでしょう。',
+    '花子のいいところはまなざしです。花子に見つめられた人は、気になって仕方がないでしょう。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
   );
-  
+
   console.log('診断結果の文章のテスト終了');
 
   console.log('同じ名前なら、同じ結果を出力することのテスト');
@@ -146,5 +146,3 @@ function test() {
 
   console.log('同じ名前なら、同じ結果を出力することのテスト終了');
 }
-
-test();
